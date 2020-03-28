@@ -8,15 +8,16 @@ subscriber.on('message', function() {
         msg.push(arg.toString());
     });
 
-    console.log(msg);
+    console.log(msg[0]);
+    console.log(JSON.parse(msg[1]));
 })
 
 subscriber.connect('tcp://localhost:5563')
-subscriber.subscribe('B')
+subscriber.subscribe('ORDERITEM')
 
   
-sock.connect("tcp://127.0.0.1:3000");
-console.log("Worker connected to port 3000");
+sock.connect("tcp://127.0.0.1:5556");
+console.log("Worker connected to port 5556");
 
 sock.on("message", function(msg) {
   console.log("work: %s", msg.toString());

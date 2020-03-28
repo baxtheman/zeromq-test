@@ -14,7 +14,7 @@ setInterval(function() {
   //if you pass an array, send() uses SENDMORE flag automatically
   publisher.send(["A", "We do not want to see this"]);
   //if you want, you can set it explicitly
-  publisher.send("B", zmq.ZMQ_SNDMORE);
+  publisher.send("PC", zmq.ZMQ_SNDMORE);
   publisher.send("We would like to see this " + i++);
 } , 500);
 
